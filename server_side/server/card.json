@@ -1,0 +1,210 @@
+[       {
+			"cardType":"spade",
+			"Number" : "K"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "Q"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "J"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "A"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "2"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "3"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "4"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "5"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "6"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "7"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "8"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "9"
+        },
+        {
+			"cardType":"spade",
+			"Number" : "10"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "K"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "Q"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "J"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "A"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "2"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "3"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "4"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "5"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "6"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "7"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "8"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "9"
+        },
+        {
+			"cardType":"diamond",
+			"Number" : "10"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "K"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "Q"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "J"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "A"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "2"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "3"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "4"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "5"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "6"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "7"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "8"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "9"
+        },
+        {
+			"cardType":"clubs",
+			"Number" : "10"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "K"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "q"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "J"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "A"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "2"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "3"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "4"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "5"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "6"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "7"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "8"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "9"
+        },
+        {
+			"cardType":"hearts",
+			"Number" : "10"
+        }
+    ]
+

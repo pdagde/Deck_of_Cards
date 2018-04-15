@@ -19,7 +19,7 @@
                 <input  style="display:none;">
                      <img  class="avatar" src="{{selectedPhotoNumber[0]}}"
                      />
-                <input type="checkbox" name="vehicle" value="Bike"> profile <br>
+                <input type="radio" name="gender" value="other" ng-model="value" ng-change="RadioChange(1)"> make profile <br>
             </label>
         </div>
 
@@ -33,7 +33,7 @@
                 <input  style="display:none;">
                      <img  class="avatar" src="{{selectedPhotoNumber[1]}}"
                      />
-                <input type="checkbox" name="vehicle" value="Bike"> profile <br>
+                <input type="radio" name="gender" value="other" ng-model="value" ng-change="RadioChange(2)">make profile <br>
             </label>
         </div>
 
@@ -46,37 +46,34 @@
         <div class="row">
             <div class=" col-md-12">
                 <div class=" col-md-6">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" ng-model="admin.name" required>
+                    <label for="uname"><b>Name</b></label>
+                    <input type="text" placeholder="Enter Name" ng-model="user.name" required>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="psw"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" ng-model="admin.email" required>
+                    <label for="psw"><b>Age</b></label>
+                    <input type="number" placeholder="Enter Age" ng-model="user.age" required>
                 </div>
             </div>
             <div class=" col-md-12">
-                 <span>
-                   .kjskjhakjsasda
-                   .sfdsdfsdfsdfsd
-                   .sdfsdfsdfsdfs
-                   .sdfsdfsdf
+                 <span class=" col-md-4" ng-repeat="skill in userSkill">
+                   .{{skill}}
                  </span>
             </div>
 
             <div class=" col-md-12">
                 <div class=" col-md-8">
-                    <input type="text" placeholder="Enter Username" ng-model="admin.name" required>
+                    <input type="text" placeholder="Enter skill" ng-model="userskill" >
                 </div>
 
                 <div class="col-md-2">
-                    <button ng-click="createChatGroup()">Add</button>
+                    <button ng-click="addSkill()">Add skill</button>
                 </div>
             </div>
 
 
             <div class="container">
-                <button ng-click="createChatGroup()">LOGIN</button>
+                <button ng-click="loginUser()">LOGIN</button>
 
             </div>
 </form>

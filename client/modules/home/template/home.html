@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Card Game</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<form class="modal-content animate" >
+    <div class="imgcontainer col-md-12"  >
+        <div ng-repeat="item in totalcards" imgcontainer>
+            <div ng-if="unplayedCard != item" class="col-md-1" style="background-color: red; height: 100px;border-radius: 29px;margin-left: -10px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+                {{item.cardType}}
+                <label style="padding-top: 16px">
+                    {{item.Number}}
+                </label>
+            </div>
+            
+            <div ng-if="unplayedCard == item && selectedCards != item" class="col-md-1" style="background-color: green; height: 100px;border-radius: 29px;margin-left: -10px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);" ng-click="saveCurrentCard(item)"> 
+                {{item.cardType}}
+                <label style="padding-top: 16px">
+                    {{item.Number}}
+                </label>
+            </div>
+
+            <div ng-if="unplayedCard == item && selectedCards == item" class="col-md-1" style="background-color: #80ffcc; height: 100px;border-radius: 29px;margin-left: -10px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);" ng-click="saveCurrentCard(item)"> 
+                            {{item.cardType}}
+                            <label style="padding-top: 16px">
+                                {{item.Number}}
+                            </label>
+             </div>
+
+        </div>
+    </div>
+
+    <div ng-disabled="true" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
+            <div ng-click="savespade()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); "> 
+            </div>
+            <div ng-click="savediamond()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); "> 
+            </div>
+            <div ng-click="saveclibs()" class="col-md-3" style="background-color: red; height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+            </div>
+            <div ng-click="savehearts()" class="col-md-3" style="background-color: red; height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+            </div>
+    </div>
+
+    <div class="  col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
+            <div class="col-md-3" > 
+                spade
+            </div>
+            <div class="col-md-3" > 
+                diamond
+            </div>
+            <div class="col-md-3" > 
+                clubs
+            </div>
+            <div class="col-md-3" > 
+                hearts
+            </div>
+    </div>
+</form>
+
+
+
+</body>
+</html>
