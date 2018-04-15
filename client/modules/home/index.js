@@ -1,5 +1,5 @@
 
-angular.module('appHome',['loginCtrl','userHomeCtrl','landingCtrl'])
+angular.module('appHome',['loginCtrl','userHomeCtrl','landingCtrl','userProfileCtrl'])
     .config(function($stateProvider) {
         $stateProvider
         
@@ -18,6 +18,12 @@ angular.module('appHome',['loginCtrl','userHomeCtrl','landingCtrl'])
                 templateUrl: "modules/home/template/landing.html",
                 controller : "landingCtrl"
             })
-           
+           .state('app.profile', {
+                url: "/profile",
+                templateUrl: "modules/home/template/profile.html",
+                controller : "profileCtrl"
+            })
+
+
 
     });

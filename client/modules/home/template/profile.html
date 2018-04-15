@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Card Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<form class="modal-login animate">
+
+    <div class="imgcontainer" style="text-align: center;" >
+        
+            <label class="file-upload-container" >
+                <input  style="display:none;">
+                     <img class="avatar" src="{{userProfile}}"
+                     />
+                 </label>
+        
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-12">
+                <div class=" col-md-6" style="text-align: center;" ng-dblclick="editProfile()">
+                    <label ng-if="!canEditName" for="uname"><b>Name : {{userDetails.data.user.name}}</b></label>
+                    <input ng-if="canEditName" ng-model="user.name" placeholder="{{userDetails.data.user.name}}" ng-blur="doneEditing()" autofocus />
+                </div>
+
+                <div class="col-md-6" style="text-align: center;" ng-dblclick="editage()">
+                    <label ng-if="!canEditAge" for="psw"><b>age : {{userDetails.data.user.age}}</b></label>
+                   <!--  <input ng-if="canEditAge" type="number" ng-model="user.age" placeholder="{{userDetails.data.user.age}}" ng-blur="doneEditing()" autofocus/> -->
+
+                     <input ng-if="canEditAge" type="number" placeholder="{{userDetails.data.user.age}}" ng-model="user.age" ng-blur="doneEditing()" autofocus > 
+                </div>
+            </div>
+            
+
+
+            <div class="container">
+                <button ng-click="updateUser()">UPDATE</button>
+
+            </div>
+</form>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

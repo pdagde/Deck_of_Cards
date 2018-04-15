@@ -37,7 +37,14 @@
                 })
               }  
 
-
+              cardGame.updateUser = function(userdata){
+                $http.post('/cardGame/updateUser',userdata).then(function(responce){
+                  $window.localStorage['userInfo'] =JSON.stringify(responce);
+                  $state.go('app.home');
+                })
+              }
+              
+             
            
 
             return cardGame;

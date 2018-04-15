@@ -7,9 +7,14 @@
 <body>
 
 <form class="modal-content animate" >
-    <div  class="col-md-3" style="height: 51px;float:right;padding: 1px" ng-if="totalcards[0]">
+    
+    <div class="col-md-2" style="float: left;" >
+        <button style="border-radius: 51%" ng-click="restart()">restart</button>
+    </div>
+
+    <div  class="col-md-3" style="height: 51px;float:right;padding: 1px" ng-if="userDetails.data._id">
            <input  style="display:none;">
-                     <img  style="height: 51px;width: 60px;border-radius: 20px;" src="{{userProfile}}"
+                     <img ng-click="editProfile()" style="height: 51px;width: 60px;border-radius: 20px;" src="{{userProfile}}"
                      />
                      <button ng-click="logout()" style="width: 70px;border-radius: 10px;">logout</button>
     </div>
@@ -40,7 +45,7 @@
         </div>
     </div>
 
-    <div ng-disabled="true" ng-if="totalcards[0]" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
+    <div ng-disabled="true" ng-if="userDetails.data._id" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
             <div ng-click="savespade()" class="col-md-3 inputCard"> 
                 <span ng-if="userDetails.data.user.spade[0]">
                            {{userDetails.data.user.spade[0].cardType}}
@@ -76,7 +81,7 @@
             </div>
     </div>
 
-    <div ng-if="totalcards[0]" class="  col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
+    <div ng-if="userDetails.data._id" class="  col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
             <div class="col-md-3" > 
                 spade
             </div>

@@ -43,13 +43,47 @@ function login(req,callback){
         cardGame.find(query,function(err,result){
                 callback.json(result[0]);
         })
-  
+}
+
+function reset(req,callback){
+        shuffle(cards);
+          var query = {
+                'user.hearts' : [],
+                'user.clubs' : [],
+                'user.diamond' : [],
+                'user.spade' : [],
+                'user.totalCard' : shuffle(cards)
+               }
+
+      cardGame.update({_id:req.body.userId},{$set:query},function(err,alldata){
+           cardGame.find({_id:req.body.userId},function(err,result){
+              callback.json(result[0]);
+           })
+      })
+}
+
+function updateUser(req,callback){
+        // shuffle(cards);
+          var query = {
+                'user.name' : req.body.name,
+                'user.age' : req.body.age
+               }
+
+      cardGame.update({_id:req.body.userId},{$set:query},function(err,alldata){
+           console.log("111111111",JSON.stringify(alldata));
+           console.log("111111111",JSON.stringify(err));
+           cardGame.find({_id:req.body.userId},function(err,result){
+             console.log("222222",JSON.stringify(err));
+           console.log("2222222",JSON.stringify(result));
+              callback.json(result[0]);
+           })
+      })
 }
 
 module.exports.signUpuser = signUpuser;
 module.exports.saveData = saveData;
 module.exports.login = login;
-
-
+module.exports.reset = reset;
+module.exports.updateUser = updateUser;
 
 

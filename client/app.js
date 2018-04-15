@@ -1,7 +1,7 @@
 
 'use strict';
 
-var App = angular.module('chat_rooms',['ui.router','appIndex']);
+var App = angular.module('card_game',['ui.router','appIndex']);
 
 App.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 				$urlRouterProvider.otherwise("/app/landing");

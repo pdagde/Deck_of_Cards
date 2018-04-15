@@ -20,7 +20,7 @@ $scope.savespade = function(){
 	  if(!$scope.selectedCards){
     		swal("Card Missing!", "please select above card!", "error");
 	  }else if($scope.selectedCards.cardType != 'spade'){
-	  		swal("wrong selection!", "please select spade!", "error");
+	  		swal("wrong selection!", "please select correct!", "error");
 	  }else{
 	  		var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
@@ -35,7 +35,7 @@ $scope.savediamond = function(){
 	  if(!$scope.selectedCards){
     		swal("Card Missing!", "please select above card!", "error");
 	  }else if($scope.selectedCards.cardType != 'diamond'){
-	  		swal("wrong selection!", "please select diamond!", "error");
+	  		swal("wrong selection!", "please select correct!", "error");
 	  }else{
 	  	    var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
@@ -49,7 +49,7 @@ $scope.saveclibs = function(){
 	  if(!$scope.selectedCards){
     	swal("Card Missing!", "please select above card!", "error");
 	  }else if($scope.selectedCards.cardType != 'clubs'){
-	  		swal("wrong selection!", "please select clubs!", "error");
+	  		swal("wrong selection!", "please select correct!", "error");
 	  }else{	
 	  		var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
@@ -63,7 +63,7 @@ $scope.savehearts = function(){
 	  if(!$scope.selectedCards){
     	swal("Card Missing!", "please select above card!", "error");
 	  }else if($scope.selectedCards.cardType != 'hearts'){
-	  		swal("wrong selection!", "please select hearts!", "error");
+	  		swal("wrong selection!", "please select correct!", "error");
 	  }else{
 	  		var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
@@ -78,6 +78,29 @@ $scope.logout = function(){
 	CardGameService.logout();
 	$state.go("app.landing");
 }
+
+$scope.restart = function(){
+	var query = {
+		 userId : $scope.userDetails.data._id
+	}
+
+  
+                $http.post('/cardGame/reset',query).then(function(responce){
+                	$scope.userDetails = [];
+                  $window.localStorage['userInfo'] =JSON.stringify(responce);
+                  $scope.userDetails = CardGameService.getUserInfo();
+                  $scope.totalcards = [];
+                  $scope.totalcards = $scope.userDetails.data.user.totalCard; 
+                  $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
+
+                   $state.go('app.home');
+                })
+ }
+
+
+ $scope.editProfile = function(){
+ 	$state.go('app.profile');
+ }
 
 
 })
