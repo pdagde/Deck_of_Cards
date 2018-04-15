@@ -26,6 +26,14 @@ angular.module('userHomeCtrl', ['CardGameService'])
                 $scope.selectedCards = '';
                 $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
                 CardGameService.saveChanges($scope.userDetails);
+                if(!$scope.userDetails.data.user.totalCard[0]){
+                         swal({
+                               title: "congratulation !",
+                               text: "You have complated this Game!",
+                               icon: "success",
+                             });
+                }
+
             }
         }
 
@@ -41,6 +49,13 @@ angular.module('userHomeCtrl', ['CardGameService'])
                 $scope.selectedCards = '';
                 $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
                 CardGameService.saveChanges($scope.userDetails);
+                if(!$scope.userDetails.data.user.totalCard[0]){
+                             swal({
+                               title: "congratulation !",
+                               text: "You have complated this Game!",
+                               icon: "success",
+                             });
+                }
             }
         }
         $scope.saveclibs = function () {
@@ -55,6 +70,13 @@ angular.module('userHomeCtrl', ['CardGameService'])
                 $scope.selectedCards = '';
                 $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
                 CardGameService.saveChanges($scope.userDetails);
+                if(!$scope.userDetails.data.user.totalCard[0]){
+                             swal({
+                               title: "congratulation !",
+                               text: "You have complated this Game!",
+                               icon: "success",
+                             });
+                }
             }
         }
         $scope.savehearts = function () {
@@ -69,6 +91,13 @@ angular.module('userHomeCtrl', ['CardGameService'])
                 $scope.selectedCards = '';
                 $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
                 CardGameService.saveChanges($scope.userDetails);
+                if(!$scope.userDetails.data.user.totalCard[0]){
+                            swal({
+                               title: "congratulation !",
+                               text: "You have complated this Game!",
+                               icon: "success",
+                             });
+                }
             }
         }
 
