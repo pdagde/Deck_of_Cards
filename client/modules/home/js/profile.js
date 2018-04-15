@@ -9,7 +9,10 @@ $scope.totalcards = $scope.userDetails.data.user.totalCard;
 $scope.userProfile = $scope.userDetails.data.user.profile;
 $scope.canEditName = false;
 $scope.canEditAge = false;
-$scope.user = {};
+$scope.user = {
+	name : $scope.userDetails.data.user.name,
+	age : $scope.userDetails.data.user.age
+};
 
 console.log("XXXXXXXXXXXXX",JSON.stringify($scope.userDetails)); 
 $scope.editProfile = function(){
