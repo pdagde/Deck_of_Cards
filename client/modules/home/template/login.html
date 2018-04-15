@@ -7,39 +7,42 @@
 </head>
 <body>
 
-<form class="modal-login animate">
+<form class="modal-login animate" style="margin-top: 60px;">
     <div class="col-md-2" style="float: left;" ng-click="Login()"><a>LOGIN</a></div>
     <div class="imgcontainer col-md-12">
         <div class="col-md-5">
-            <label ng-if="!selectedPhotoNumber[0]" class="file-upload-container" >
-                <input  style="display:none;">
-                     <img class="avatar" src="img/images.jpeg"
-                     />
-                 </label>
-            <label ng-if="selectedPhotoNumber[0]" class="file-upload-container" >
-                <input  style="display:none;">
-                     <img  class="avatar" src="{{selectedPhotoNumber[0]}}"
-                     />
-                <input type="radio" name="gender" value="other" ng-model="value" ng-change="RadioChange(1)"> make profile <br>
+            <label ng-if="!selectedPhotoNumber[0]" class="file-upload-container">
+                <input style="display:none;">
+                <img class="avatar" src="img/images.jpeg"
+                />
+            </label>
+            <label ng-if="selectedPhotoNumber[0]" class="file-upload-container">
+                <input style="display:none;">
+                <img class="avatar" src="{{selectedPhotoNumber[0]}}"
+                />
+                <input type="radio" name="gender" value="other" ng-model="value" ng-change="RadioChange(1)"> make
+                profile <br>
             </label>
         </div>
 
         <div class="col-md-5">
             <label ng-if="!selectedPhotoNumber[1]" class="file-upload-container" f>
-                <input  style="display:none;">
-                     <img  class="avatar" src="img/images.jpeg"
-                     />
+                <input style="display:none;">
+                <img class="avatar" src="img/images.jpeg"
+                />
             </label>
             <label ng-if="selectedPhotoNumber[1]" class="file-upload-container" for="file-upload">
-                <input  style="display:none;">
-                     <img  class="avatar" src="{{selectedPhotoNumber[1]}}"
-                     />
-                <input type="radio" name="gender" value="other" ng-model="value" ng-change="RadioChange(2)">make profile <br>
+                <input style="display:none;">
+                <img class="avatar" src="{{selectedPhotoNumber[1]}}"
+                />
+                <input type="radio" name="gender" value="other" ng-model="value" ng-change="RadioChange(2)">make profile
+                <br>
             </label>
         </div>
 
         <div class="col-md-2">
-                 <input ng-dissabled="true" style="width: 158px;font-size: 28px;border: 2px solid #888;" for="file-upload" id="file-upload" type="file" id="img-preview"></input>
+            <input ng-dissabled="true" style="width: 158px;font-size: 28px;border: 2px solid #888;" for="file-upload"
+                   id="file-upload" type="file" id="img-preview"></input>
         </div>
     </div>
 
@@ -53,7 +56,7 @@
 
                 <div class="col-md-6">
                     <label for="psw"><b>Age</b></label>
-                    <input  type="number" placeholder="Enter Age" ng-model="user.age" required>
+                    <input type="number" placeholder="Enter Age" ng-model="user.age" required>
                 </div>
             </div>
             <div class=" col-md-12">
@@ -64,7 +67,7 @@
 
             <div class=" col-md-12">
                 <div class=" col-md-8">
-                    <input class="updateButton" type="text" placeholder="Enter skill" ng-model="userskill" >
+                    <input class="updateButton" type="text" placeholder="Enter skill" ng-model="userskill">
                 </div>
 
                 <div class="col-md-2">

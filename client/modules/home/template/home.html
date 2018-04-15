@@ -11,7 +11,7 @@
     <div class="col-md-2" style="float: left;" >
         <button style="border-radius: 51%" ng-click="restart()">restart</button>
     </div>
-
+    <div class="col-md-6" style="text-align: center;"><label>{{Username}}</label></div>
     <div  class="col-md-3" style="height: 51px;float:right;padding: 1px" ng-if="userDetails.data._id">
            <input  style="display:none;">
                      <img ng-click="editProfile()" style="height: 51px;width: 60px;border-radius: 20px;" src="{{userProfile}}"
@@ -83,16 +83,16 @@
     </div>
 
     <div ng-if="userDetails.data._id" class="  col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
-            <div class="col-md-3" > 
+            <div class="col-md-3" style="text-align: center;" > 
                 spade
             </div>
-            <div class="col-md-3" > 
+            <div class="col-md-3" style="text-align: center;"> 
                 diamond
             </div>
-            <div class="col-md-3" > 
+            <div class="col-md-3" style="text-align: center;"> 
                 clubs
             </div>
-            <div class="col-md-3" > 
+            <div class="col-md-3" style="text-align: center;"> 
                 hearts
             </div>
     </div>

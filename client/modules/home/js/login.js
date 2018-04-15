@@ -36,7 +36,6 @@ $scope.loginUser = function(){
            swal("Profile photo is compulsory!", "please select photo as profile!", "error");
    }else{
       $http.post('/cardGame/signUpuser',$scope.user).then(function(responce){
-        // console.log("AAAAAAAAAAA",JSON.stringify($scope.selectedPhoto));
         CardGameService.storeUser(responce);
         $state.go('app.home');
       })
@@ -72,8 +71,6 @@ if(fileUpload){
     data:formData
   }).then(function(res){
     $scope.selectedPhotoNumber.push(res.data.url);
-
-    // console.log("2kjhkjhkhkjkj",JSON.stringify($rootScope.selectedPhotoNumber));
     
     $scope.$apply();
     console.log(res);

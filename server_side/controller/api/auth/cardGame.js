@@ -63,19 +63,13 @@ function reset(req,callback){
 }
 
 function updateUser(req,callback){
-        // shuffle(cards);
-        console.log("111111111",JSON.stringify(req.body));
           var query = {
                 'user.name' : req.body.name,
                 'user.age' : req.body.age
                }
 
       cardGame.update({_id:req.body.userId},{$set:query},function(err,alldata){
-           console.log("111111111",JSON.stringify(alldata));
-           console.log("111111111",JSON.stringify(err));
            cardGame.find({_id:req.body.userId},function(err,result){
-             console.log("222222",JSON.stringify(err));
-           console.log("2222222",JSON.stringify(result));
               callback.json(result[0]);
            })
       })

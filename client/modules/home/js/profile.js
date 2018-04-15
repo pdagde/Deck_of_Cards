@@ -14,7 +14,6 @@ $scope.user = {
 	age : $scope.userDetails.data.user.age
 };
 
-console.log("XXXXXXXXXXXXX",JSON.stringify($scope.userDetails)); 
 $scope.editProfile = function(){
   $scope.canEditName = true;
 }
@@ -29,8 +28,6 @@ $scope.doneEditing = function(){
 
 $scope.updateUser = function(){
 	$scope.user.userId = $scope.userDetails.data._id;
-
-	 console.log("WWWWWWWWWWWWW",JSON.stringify($scope.user));
 	CardGameService.updateUser($scope.user);
 }
 

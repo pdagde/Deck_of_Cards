@@ -1,57 +1,53 @@
-
-
 'use strict';
 
 // Public API
 
-    angular.module('CardGameService', [])
+angular.module('CardGameService', [])
 
-        .factory('CardGameService', function ($rootScope,$window,$state,$http) {
-           
-            var cardGame = {};
-            
-            cardGame.storeUser = function(value){
-            	$window.localStorage['userInfo'] =JSON.stringify(value);
-              }
+    .factory('CardGameService', function ($rootScope, $window, $state, $http) {
 
-              cardGame.getUserInfo = function(){
-              	var userDetails = JSON.parse($window.localStorage['userInfo']);
-              	return userDetails;
-              }
+        var cardGame = {};
 
-              cardGame.saveChanges = function(userdata){
-                $http.post('/cardGame/saveData',userdata).then(function(responce){
-                  $window.localStorage['userInfo'] =JSON.stringify(responce);
-                })
-                console.log("userDATAuserDATAuserDATA",JSON.stringify(userdata));
-              } 
-              
-              cardGame.logout = function(userdata){
-                $window.localStorage['userInfo'] =JSON.stringify({});
-              }
+        cardGame.storeUser = function (value) {
+            $window.localStorage['userInfo'] = JSON.stringify(value);
+        }
 
-              cardGame.login = function(userdata){
-                $http.post('/cardGame/login',userdata).then(function(responce){
-                  $window.localStorage['userInfo'] =JSON.stringify(responce);
-                   console.log("SDSDSDSDSDSDSDS",JSON.stringify(responce));
-                   if(responce.data._id){
-                      $state.go('app.home');
-                   }else{
+        cardGame.getUserInfo = function () {
+            var userDetails = JSON.parse($window.localStorage['userInfo']);
+            return userDetails;
+        }
+
+        cardGame.saveChanges = function (userdata) {
+            $http.post('/cardGame/saveData', userdata).then(function (responce) {
+                $window.localStorage['userInfo'] = JSON.stringify(responce);
+            })
+            console.log("userDATAuserDATAuserDATA", JSON.stringify(userdata));
+        }
+
+        cardGame.logout = function (userdata) {
+            $window.localStorage['userInfo'] = JSON.stringify({});
+        }
+
+        cardGame.login = function (userdata) {
+            $http.post('/cardGame/login', userdata).then(function (responce) {
+                $window.localStorage['userInfo'] = JSON.stringify(responce);
+                console.log("SDSDSDSDSDSDSDS", JSON.stringify(responce));
+                if (responce.data._id) {
+                    $state.go('app.home');
+                } else {
                     swal("ERROR!", "Name ang age combination Not Match!", "error");
-                   }
-                  
-                })
-              }  
+                }
 
-              cardGame.updateUser = function(userdata){
-                $http.post('/cardGame/updateUser',userdata).then(function(responce){
-                  $window.localStorage['userInfo'] =JSON.stringify(responce);
-                  $state.go('app.home');
-                })
-              }
-              
-             
-           
+            })
+        }
 
-            return cardGame;
-        });
+        cardGame.updateUser = function (userdata) {
+            $http.post('/cardGame/updateUser', userdata).then(function (responce) {
+                $window.localStorage['userInfo'] = JSON.stringify(responce);
+                $state.go('app.home');
+            })
+        }
+
+
+        return cardGame;
+    });
