@@ -20,10 +20,10 @@ $scope.savespade = function(){
 	  }else{
 	  		var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
-	  	    $scope.userDetails.data.user.diamond.unshift($scope.selectedCards);
+	  	    $scope.userDetails.data.user.spade.unshift($scope.selectedCards);
 	  	    $scope.selectedCards = '';
 	  	    $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
-
+	  	    CardGameService.saveChanges($scope.userDetails);
 	  }
 }
 
@@ -38,9 +38,9 @@ $scope.savediamond = function(){
 	  	    $scope.userDetails.data.user.diamond.unshift($scope.selectedCards);
 	  	    $scope.selectedCards = '';
 	  	    $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
-
+	  	    CardGameService.saveChanges($scope.userDetails);
 	  }
-}
+} 
 $scope.saveclibs = function(){
 	  if(!$scope.selectedCards){
     	swal("Card Missing!", "please select above card!", "error");
@@ -49,10 +49,10 @@ $scope.saveclibs = function(){
 	  }else{	
 	  		var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
-	  	    $scope.userDetails.data.user.diamond.unshift($scope.selectedCards);
+	  	    $scope.userDetails.data.user.clubs.unshift($scope.selectedCards);
 	  	    $scope.selectedCards = '';
 	  	    $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
-
+	  	     CardGameService.saveChanges($scope.userDetails);
 	  }
 }
 $scope.savehearts = function(){
@@ -63,10 +63,10 @@ $scope.savehearts = function(){
 	  }else{
 	  		var index = $scope.userDetails.data.user.totalCard.indexOf($scope.selectedCards);
 	  	    $scope.userDetails.data.user.totalCard.splice(index,1);
-	  	    $scope.userDetails.data.user.diamond.unshift($scope.selectedCards);
+	  	    $scope.userDetails.data.user.hearts.unshift($scope.selectedCards);
 	  	    $scope.selectedCards = '';
 	  	    $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
-
+	  	     CardGameService.saveChanges($scope.userDetails);
 	  }
 }
 

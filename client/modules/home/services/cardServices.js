@@ -12,7 +12,6 @@
             
             cardGame.storeUser = function(value){
             	$window.localStorage['userInfo'] =JSON.stringify(value);
-                 // console.log("XXXXXXXXXXXXXX",JSON.stringify(value));
               }
 
               cardGame.getUserInfo = function(){
@@ -20,10 +19,15 @@
               	return userDetails;
               }
 
+              cardGame.saveChanges = function(userdata){
+                $http.post('/cardGame/saveData',userdata).then(function(responce){
+                  $window.localStorage['userInfo'] =JSON.stringify(responce);
+                })
+                console.log("userDATAuserDATAuserDATA",JSON.stringify(userdata));
+              } 
           
 
-
-            
+           
 
             return cardGame;
         });

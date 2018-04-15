@@ -35,12 +35,37 @@
 
     <div ng-disabled="true" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
             <div ng-click="savespade()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); "> 
+                <span ng-if="userDetails.data.user.spade[0]">
+                           {{userDetails.data.user.spade[0].cardType}}
+                            <label style="padding-top: 16px">
+                                {{userDetails.data.user.spade[0].Number}}
+                            </label>
+                </span>
+                            
             </div>
-            <div ng-click="savediamond()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); "> 
+            <div ng-click="savediamond()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); ">
+                        <span ng-if="userDetails.data.user.diamond[0]">
+                           {{userDetails.data.user.diamond[0].cardType}}
+                            <label style="padding-top: 16px">
+                                {{userDetails.data.user.diamond[0].Number}}
+                            </label>
+                        </span>
             </div>
             <div ng-click="saveclibs()" class="col-md-3" style="background-color: red; height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+                        <span ng-if="userDetails.data.user.clubs[0]">
+                            {{userDetails.data.user.clubs[0].cardType}}
+                            <label style="padding-top: 16px">
+                                {{userDetails.data.user.clubs[0].Number}}
+                            </label>
+                        </span>
             </div>
             <div ng-click="savehearts()" class="col-md-3" style="background-color: red; height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+                        <span ng-if="userDetails.data.user.hearts[0]">
+                            {{userDetails.data.user.hearts[0].cardType}}
+                            <label style="padding-top: 16px">
+                                {{userDetails.data.user.hearts[0].Number}}
+                            </label>
+                        </span>
             </div>
     </div>
 

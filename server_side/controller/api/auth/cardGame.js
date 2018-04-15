@@ -11,21 +11,32 @@ function signUpuser(req,callback){
     newuser.user.age = req.body.age;
     newuser.user.profile = req.body.profile;
     newuser.user.userPhoto = req.body.images;
-
-console.log("111111111111",JSON.stringify(cards));
     shuffle(cards);
-
     newuser.user.totalCard = cards;
-    console.log("222222222222",JSON.stringify(cards));
     newuser.save(function (err, savedUser) {
-    	console.log("errerrerrerrerr",JSON.stringify(err));
-    	// console.log("AAAAAAAAAAAAAA",JSON.stringify(savedUser));
       callback.json(savedUser);
     })
 }
 
-module.exports.signUpuser = signUpuser;
+function saveData(req,callback){
+  
+  var query = {
+        'user.hearts' : req.body.data.user.hearts,
+        'user.clubs' : req.body.data.user.clubs,
+        'user.diamond' : req.body.data.user.diamond,
+        'user.spade' : req.body.data.user.spade,
+        'user.totalCard' : req.body.data.user.totalCard
+  }
 
+cardGame.update({_id:req.body.data._id},{$set:query},function(err,alldata){
+     cardGame.find({_id:req.body.data._id},function(err,result){
+        callback.json(result[0]);
+     })
+})
+}
+
+module.exports.signUpuser = signUpuser;
+module.exports.saveData = saveData;
 
 
 
