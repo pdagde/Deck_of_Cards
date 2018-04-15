@@ -48,12 +48,12 @@
             <div class=" col-md-12">
                 <div class=" col-md-6">
                     <label for="uname"><b>Name</b></label>
-                    <input type="text" placeholder="Enter Name" ng-model="user.name" required>
+                    <input class="updateButton" type="text" placeholder="Enter Name" ng-model="user.name" required>
                 </div>
 
                 <div class="col-md-6">
                     <label for="psw"><b>Age</b></label>
-                    <input type="number" placeholder="Enter Age" ng-model="user.age" required>
+                    <input  type="number" placeholder="Enter Age" ng-model="user.age" required>
                 </div>
             </div>
             <div class=" col-md-12">
@@ -64,17 +64,17 @@
 
             <div class=" col-md-12">
                 <div class=" col-md-8">
-                    <input type="text" placeholder="Enter skill" ng-model="userskill" >
+                    <input class="updateButton" type="text" placeholder="Enter skill" ng-model="userskill" >
                 </div>
 
                 <div class="col-md-2">
-                    <button ng-click="addSkill()">Add skill</button>
+                    <button ng-click="addSkill()" class="updateButton">Add skill</button>
                 </div>
             </div>
 
 
             <div class="container">
-                <button ng-click="loginUser()">CREATE ACCOUNT</button>
+                <button ng-click="loginUser()" class="updateButton">CREATE ACCOUNT</button>
 
             </div>
 </form>

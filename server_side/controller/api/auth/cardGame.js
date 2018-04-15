@@ -41,7 +41,6 @@ function login(req,callback){
           'user.age' : req.body.age
         }
         cardGame.find(query,function(err,result){
-              console.log("SDSDSDSDSDSDSDS",JSON.stringify(result));
                 callback.json(result[0]);
         })
 }

@@ -46,8 +46,9 @@
     </div>
 
     <div ng-disabled="true" ng-if="userDetails.data._id" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
-            <div ng-click="savespade()" class="col-md-3 inputCard"> 
+            <div ng-click="savespade()" class="col-md-3 inputCard ng-class:{'inputcardActive': (selectedCards) };"> 
                 <span ng-if="userDetails.data.user.spade[0]">
+                    
                            {{userDetails.data.user.spade[0].cardType}}
                             <label style="padding-top: 16px">
                                 {{userDetails.data.user.spade[0].Number}}
@@ -55,7 +56,7 @@
                 </span>
                             
             </div>
-            <div ng-click="savediamond()" class="col-md-3 inputCard">
+            <div ng-click="savediamond()" class="col-md-3 inputCard ng-class:{'inputcardActive': (selectedCards) };">
                         <span ng-if="userDetails.data.user.diamond[0]">
                            {{userDetails.data.user.diamond[0].cardType}}
                             <label style="padding-top: 16px">
@@ -63,7 +64,7 @@
                             </label>
                         </span>
             </div>
-            <div ng-click="saveclibs()" class="col-md-3 inputCard"> 
+            <div ng-click="saveclibs()" class="col-md-3 inputCard ng-class:{'inputcardActive': (selectedCards) };"> 
                         <span ng-if="userDetails.data.user.clubs[0]">
                             {{userDetails.data.user.clubs[0].cardType}}
                             <label style="padding-top: 16px">
@@ -71,7 +72,7 @@
                             </label>
                         </span>
             </div>
-            <div ng-click="savehearts()" class="col-md-3 inputCard"> 
+            <div ng-click="savehearts()" class="col-md-3 inputCard ng-class:{'inputcardActive': (selectedCards) };"> 
                         <span ng-if="userDetails.data.user.hearts[0]">
                             {{userDetails.data.user.hearts[0].cardType}}
                             <label style="padding-top: 16px">

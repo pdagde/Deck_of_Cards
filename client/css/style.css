@@ -11,7 +11,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+/* Set a style for all buttons */ 
 button {
     background-color: #4CAF50;
     color: white;
@@ -20,40 +20,51 @@ button {
     border: none;
     cursor: pointer;
     width: 85%;
-}
+} 
 
 button:hover {
     opacity: 0.8;
 }
 .activeCard {
-    background-color: green;
+    background-color: #0066ff;
      height: 100px;
      border-radius: 29px;
      margin-left: -10px;
      box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"
 }
 .cardInqueue {
-    background-color: red; 
+    background-color:  #9fbfdf; 
     height: 100px;
     border-radius: 29px;
     margin-left: -10px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*box-shadow: 0px 2px 8px rgba(0,0,0,0.12);*/
 }
 
+.updateButton {
+                border-radius: 17px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
 .selectedActive {
     background-color: #80ffcc; 
     height: 100px;
     border-radius: 29px;
     margin-left: -10px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 .inputCard {
-    background-color: red;
+    background-color: #9fbfdf;
     height: 150px;
     border-radius: 29px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.12); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.inputcardActive {
+        background-color:green ;
+    height: 150px;
+    border-radius: 29px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -88,6 +99,7 @@ img.avatar {
     width: 53%;
     height: 40%;
     border-radius: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 

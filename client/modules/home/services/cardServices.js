@@ -33,7 +33,13 @@
               cardGame.login = function(userdata){
                 $http.post('/cardGame/login',userdata).then(function(responce){
                   $window.localStorage['userInfo'] =JSON.stringify(responce);
-                  $state.go('app.home');
+                   console.log("SDSDSDSDSDSDSDS",JSON.stringify(responce));
+                   if(responce.data._id){
+                      $state.go('app.home');
+                   }else{
+                    swal("ERROR!", "Name ang age combination Not Match!", "error");
+                   }
+                  
                 })
               }  
 
