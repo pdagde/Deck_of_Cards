@@ -8,6 +8,10 @@ $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.
 $scope.totalcards = $scope.userDetails.data.user.totalCard; 
 
 
+$scope.userProfile = $scope.userDetails.data.user.profile;
+
+
+
 $scope.saveCurrentCard = function(card){
    $scope.selectedCards = card;
 }
@@ -68,6 +72,11 @@ $scope.savehearts = function(){
 	  	    $scope.unplayedCard = $scope.userDetails.data.user.totalCard[$scope.userDetails.data.user.totalCard.length - 1];
 	  	     CardGameService.saveChanges($scope.userDetails);
 	  }
+}
+
+$scope.logout = function(){
+	CardGameService.logout();
+	$state.go("app.landing");
 }
 
 

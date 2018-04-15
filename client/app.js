@@ -4,7 +4,7 @@
 var App = angular.module('chat_rooms',['ui.router','appIndex']);
 
 App.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-				$urlRouterProvider.otherwise("/app/login");
+				$urlRouterProvider.otherwise("/app/landing");
 				
 				$stateProvider  
                     .state('app', {

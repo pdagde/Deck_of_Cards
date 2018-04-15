@@ -7,23 +7,30 @@
 <body>
 
 <form class="modal-content animate" >
+    <div  class="col-md-3" style="height: 51px;float:right;padding: 1px" ng-if="totalcards[0]">
+           <input  style="display:none;">
+                     <img  style="height: 51px;width: 60px;border-radius: 20px;" src="{{userProfile}}"
+                     />
+                     <button ng-click="logout()" style="width: 70px;border-radius: 10px;">logout</button>
+    </div>
+    
     <div class="imgcontainer col-md-12"  >
         <div ng-repeat="item in totalcards" imgcontainer>
-            <div ng-if="unplayedCard != item" class="col-md-1" style="background-color: red; height: 100px;border-radius: 29px;margin-left: -10px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+            <div ng-if="unplayedCard != item" class="col-md-1 cardInqueue"> 
                 {{item.cardType}}
                 <label style="padding-top: 16px">
                     {{item.Number}}
                 </label>
             </div>
             
-            <div ng-if="unplayedCard == item && selectedCards != item" class="col-md-1" style="background-color: green; height: 100px;border-radius: 29px;margin-left: -10px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);" ng-click="saveCurrentCard(item)"> 
+            <div ng-if="unplayedCard == item && selectedCards != item" class="col-md-1 activeCard"  ng-click="saveCurrentCard(item)"> 
                 {{item.cardType}}
                 <label style="padding-top: 16px">
                     {{item.Number}}
                 </label>
             </div>
 
-            <div ng-if="unplayedCard == item && selectedCards == item" class="col-md-1" style="background-color: #80ffcc; height: 100px;border-radius: 29px;margin-left: -10px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);" ng-click="saveCurrentCard(item)"> 
+            <div ng-if="unplayedCard == item && selectedCards == item" class="col-md-1 selectedActive" ng-click="saveCurrentCard(item)"> 
                             {{item.cardType}}
                             <label style="padding-top: 16px">
                                 {{item.Number}}
@@ -33,8 +40,8 @@
         </div>
     </div>
 
-    <div ng-disabled="true" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
-            <div ng-click="savespade()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); "> 
+    <div ng-disabled="true" ng-if="totalcards[0]" class="col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
+            <div ng-click="savespade()" class="col-md-3 inputCard"> 
                 <span ng-if="userDetails.data.user.spade[0]">
                            {{userDetails.data.user.spade[0].cardType}}
                             <label style="padding-top: 16px">
@@ -43,7 +50,7 @@
                 </span>
                             
             </div>
-            <div ng-click="savediamond()" class="col-md-3" style="background-color: red;height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12); ">
+            <div ng-click="savediamond()" class="col-md-3 inputCard">
                         <span ng-if="userDetails.data.user.diamond[0]">
                            {{userDetails.data.user.diamond[0].cardType}}
                             <label style="padding-top: 16px">
@@ -51,7 +58,7 @@
                             </label>
                         </span>
             </div>
-            <div ng-click="saveclibs()" class="col-md-3" style="background-color: red; height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+            <div ng-click="saveclibs()" class="col-md-3 inputCard"> 
                         <span ng-if="userDetails.data.user.clubs[0]">
                             {{userDetails.data.user.clubs[0].cardType}}
                             <label style="padding-top: 16px">
@@ -59,7 +66,7 @@
                             </label>
                         </span>
             </div>
-            <div ng-click="savehearts()" class="col-md-3" style="background-color: red; height: 150px;border-radius: 29px;box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"> 
+            <div ng-click="savehearts()" class="col-md-3 inputCard"> 
                         <span ng-if="userDetails.data.user.hearts[0]">
                             {{userDetails.data.user.hearts[0].cardType}}
                             <label style="padding-top: 16px">
@@ -69,7 +76,7 @@
             </div>
     </div>
 
-    <div class="  col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
+    <div ng-if="totalcards[0]" class="  col-md-6 col-offset-md-6"  style="margin-left: 45%;" >
             <div class="col-md-3" > 
                 spade
             </div>

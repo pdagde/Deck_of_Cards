@@ -6,7 +6,7 @@
 
     angular.module('CardGameService', [])
 
-        .factory('CardGameService', function ($rootScope,$window,$http) {
+        .factory('CardGameService', function ($rootScope,$window,$state,$http) {
            
             var cardGame = {};
             
@@ -25,7 +25,18 @@
                 })
                 console.log("userDATAuserDATAuserDATA",JSON.stringify(userdata));
               } 
-          
+              
+              cardGame.logout = function(userdata){
+                $window.localStorage['userInfo'] =JSON.stringify({});
+              }
+
+              cardGame.login = function(userdata){
+                $http.post('/cardGame/login',userdata).then(function(responce){
+                  $window.localStorage['userInfo'] =JSON.stringify(responce);
+                  $state.go('app.home');
+                })
+              }  
+
 
            
 

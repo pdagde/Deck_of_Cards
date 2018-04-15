@@ -20,20 +20,37 @@ $scope.RadioChange = function(selectedPhoto){
 }
 
 $scope.loginUser = function(){
-   $scope.user.skill = $scope.userSkill;
+   $scope.user.profile = $scope.selectedPhoto;
+    $scope.user.skill = $scope.userSkill;
    $scope.user.images = $scope.selectedPhotoNumber;
-   if($scope.selectedPhoto){
-    $scope.user.profile = $scope.selectedPhoto;
+
+   if(!$scope.user.images[0]){
+      swal("Photo is compulsory!", "please select photo!", "error");
+   }else if(!$scope.user.skill){
+       swal("skill is compulsory!", "please put skill!", "error");
+   }else if(!$scope.user.age){
+         swal("age is compulsory!", "please Enter age!", "error");
+   }else if(!$scope.user.name){
+         swal("Name is compulsory!", "please Enter Name!", "error");
+   }else if(!$scope.user.profile){
+           swal("Profile photo is compulsory!", "please select photo as profile!", "error");
+   }else{
+      $http.post('/cardGame/signUpuser',$scope.user).then(function(responce){
+        // console.log("AAAAAAAAAAA",JSON.stringify($scope.selectedPhoto));
+        CardGameService.storeUser(responce);
+        $state.go('app.home');
+      })
    }
-  
-   $http.post('/cardGame/signUpuser',$scope.user).then(function(responce){
-      // console.log("AAAAAAAAAAA",JSON.stringify($scope.selectedPhoto));
-      CardGameService.storeUser(responce);
-      $state.go('app.home');
-   })
+
+   
+   
+   
+
 }
 
-
+$scope.Login = function(){
+  $state.go("app.landing");
+}
          
 var CLOUDINARY_URL="https://api.cloudinary.com/v1_1/djwmqlqrk/upload";
 var CLOUDINARY_UPLOAD_PRESET='gfu1dswz';

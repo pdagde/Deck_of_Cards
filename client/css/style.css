@@ -25,7 +25,36 @@ button {
 button:hover {
     opacity: 0.8;
 }
+.activeCard {
+    background-color: green;
+     height: 100px;
+     border-radius: 29px;
+     margin-left: -10px;
+     box-shadow: 0px 2px 8px rgba(0,0,0,0.12);"
+}
+.cardInqueue {
+    background-color: red; 
+    height: 100px;
+    border-radius: 29px;
+    margin-left: -10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.12);
+}
 
+.selectedActive {
+    background-color: #80ffcc; 
+    height: 100px;
+    border-radius: 29px;
+    margin-left: -10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.12);
+}
+
+
+.inputCard {
+    background-color: red;
+    height: 150px;
+    border-radius: 29px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.12); 
+}
 /* Extra styles for the cancel button */
 .cancelbtn {
     width: auto;
@@ -65,6 +94,9 @@ img.avatar {
 .container {
     padding: 16px;
 }
+.swichcontainer {
+    padding: 6px;
+}
 
 .sendButton {
         margin-top: -33px;
@@ -97,6 +129,15 @@ span.psw {
     border: 1px solid #888;
     width: 98%; 
     height: 97%
+}
+
+.modal-login {
+    background-color: #fefefe;
+    margin: 1% auto 15% auto; 
+    border: 1px solid #888;
+    width: 85%; 
+    /*height: 150px*/
+    
 }
 
 /* The Close Button (x) */

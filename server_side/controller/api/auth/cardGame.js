@@ -35,9 +35,20 @@ cardGame.update({_id:req.body.data._id},{$set:query},function(err,alldata){
 })
 }
 
+function login(req,callback){
+        var query = {
+          'user.name' : req.body.name,
+          'user.age' : req.body.age
+        }
+        cardGame.find(query,function(err,result){
+                callback.json(result[0]);
+        })
+  
+}
+
 module.exports.signUpuser = signUpuser;
 module.exports.saveData = saveData;
-
+module.exports.login = login;
 
 
 
